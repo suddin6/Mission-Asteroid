@@ -10,6 +10,8 @@ The project was done with IDLE so I wrote all the **docstrings and end-of-line c
 
 My partner **designed all of the UI elements**.
 
+The GitHub Pages initially starts with the pygame logo and directs you to click the screen. Once that it completed, you will be directed to the web version of our asteroid game.
+
 When playing the game, click **"P"** to pause the game. Then you will see options to resume or restart.
 
 The gold asteroid awards you 10 points.
