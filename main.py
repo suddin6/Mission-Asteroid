@@ -9,6 +9,7 @@ Summary: An interactive asteroid game.
 
 #import built-in modules
 import asyncio
+from asyncio import events
 import pygame
 from os.path import join
 import os
@@ -137,10 +138,12 @@ async def main():
                     #press p to pause the game
                     if event.key == pygame.K_p:
                         await pause()
+                        break
 
                     #press r to resume the game AFTER user presses pause
                     if event.key == pygame.K_r and paused:
-                        resume()
+                        await resume()
+                        break
 
                     #press left shift to restart the game AFTER user presses pause
                     if event.key == pygame.K_LSHIFT and paused:
@@ -181,8 +184,8 @@ async def main():
                     screen.blit(pausedText, (300, 200))
 
                     #calling the resume_button and restart_button functions to display on pause screen
-                    resume_button()
-                    restart_button()
+                    await resume_button(events)
+                    await restart_button(events)
 
                     #update the screen and continue with the game
                     pygame.display.update()
@@ -1147,7 +1150,7 @@ async def pause():
         await asyncio.sleep(0)
 
 #the resume_button function
-def resume_button():
+async def resume_button(events):
 
     '''
     This function shows a resume button on the paused
@@ -1181,8 +1184,9 @@ def resume_button():
         pygame.draw.rect(screen, hoverColor, (buttonX, buttonY, buttonW, buttonH), border_radius = buttonRadius)
 
         #if button is left clicked, call the resume function
-        if pygame.mouse.get_pressed()[0] == 1:
-            resume()
+        for event in events:
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                await resume()
     else:
         pygame.draw.rect(screen, buttonColor, (buttonX, buttonY, buttonW, buttonH), border_radius = buttonRadius)
 
@@ -1197,7 +1201,7 @@ def resume_button():
     screen.blit(text_surf, text_rect)
 
 #the resume function
-def resume():
+async def resume():
 
     '''
     This function handles the resuming of the game.
@@ -1219,12 +1223,12 @@ def resume():
     unpaused = True
     pauseFlashing = True
     
-    pygame.time.delay(50) #delay the screen for 50 milliseconds
+    await asyncio.sleep(0.05)
     
     return True #button was clicked
 
 #the restart_button function
-def restart_button():
+async def restart_button(events):
 
     '''
     This function draws the restart button on the
@@ -1322,8 +1326,7 @@ def flashReset():
     #flash the screen
     screen.fill((250,249,246))
     pygame.display.update()
-    pygame.time.delay(500)                
-
+    
     reset_game() #call the reset_game function
 
 
