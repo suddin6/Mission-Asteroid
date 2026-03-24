@@ -229,7 +229,7 @@ async def main():
                 continue
 
             #call the pause_button function
-            pause_button(remaining_time, events)
+            await pause_button(remaining_time, events)
 
             #flash the screen before and after pausing
             if pauseFlashing:
@@ -1071,7 +1071,7 @@ async def start_screen():
     return False #button was not clicked
 
 #the pause_button function
-def pause_button(remaining_time, events):
+async def pause_button(remaining_time, events):
 
     '''
     This function creates a pause button for the users
@@ -1108,7 +1108,7 @@ def pause_button(remaining_time, events):
             if event.type == pygame.MOUSEBUTTONDOWN: #used to make sure there aren't multiple clicks each frame
                 if event.button == 1: #left mouse click
                     if buttonX <= event.pos[0] <= buttonX + buttonW and buttonY <= event.pos[1] <= buttonY + buttonH:
-                        pause() #call the pause function
+                        await pause() #call the pause function
                         return True #button was clicked
     else:
         pygame.draw.rect(screen, buttonColor, (buttonX, buttonY, buttonW, buttonH), border_radius = buttonRadius)
