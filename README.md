@@ -10,7 +10,7 @@ The project was done with IDLE so I wrote all the **docstrings and end-of-line c
 
 My partner **designed all of the UI elements**.
 
-The GitHub Pages initially starts with the pygame logo and directs you to click the screen. Once that it completed, you will be directed to the web version of our asteroid game.
+The GitHub Pages initially starts with the pygame logo and directs you to click the screen. Once that is completed, you will be directed to the web version of our asteroid game.
 
 When playing the game:
 Use **SPACE** to shoot the lasers.
@@ -20,6 +20,6 @@ The gold asteroid awards you 10 points.
 The black asteroid with red and orange bits causes you to lose 10 seconds.
 The green clock adds 5 second to your time.
 The plain gray asteroids add 1 point to your score.
-Scores are recorded after each round, and highest score is displayed.
+Scores are recorded after each round, and the highest score is displayed.
 
 Have fun playing!
