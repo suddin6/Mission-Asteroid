@@ -9,3 +9,13 @@ My partner was responsible for the:
 The project was done with IDLE so I wrote all the **docstrings and end-of-line comments** throughout the code, **combined both of our codes** into one working program, and **handled the main function and global variables**.
 
 My partner **designed all of the UI elements**.
+
+When playing the game, click **"P"** to pause the game. Then you will see options to resume or restart.
+
+The gold asteroid awards you 10 points.
+The black asteroid with red and orange bits causes you to lose 10 seconds.
+The green clock adds 5 second to your time.
+The plain gray asteroids add 1 point to your score.
+Scores are recorded after each round, and highest score is displayed.
+
+Have fun playing!
