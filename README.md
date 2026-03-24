@@ -12,8 +12,10 @@ My partner **designed all of the UI elements**.
 
 The GitHub Pages initially starts with the pygame logo and directs you to click the screen. Once that it completed, you will be directed to the web version of our asteroid game.
 
-When playing the game, click **"P"** to pause the game. Then you will see options to resume or restart.
-
+When playing the game:
+Use **SPACE** to shoot the lasers.
+Use **WASD** or the **arrow** keys to move.
+Use **"P"** to pause the game. [Then you will see options to resume or restart.]
 The gold asteroid awards you 10 points.
 The black asteroid with red and orange bits causes you to lose 10 seconds.
 The green clock adds 5 second to your time.
